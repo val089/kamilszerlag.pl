@@ -1,0 +1,37 @@
+$main-bg-color: #040641;
+$main-purple-color: #d709d8;
+
+$portfolio-card1-bg: linear-gradient(90deg, rgba(223, 83, 42, 1) 0%, rgba(223, 83, 42, 0.15) 100%);
+$portfolio-card2-bg: linear-gradient(90deg, rgba(75, 40, 109, 1) 0%, rgba(75, 40, 109, 0.15) 100%);
+$portfolio-card3-bg: linear-gradient(
+  90deg,
+  rgba(44, 152, 240, 1) 0%,
+  rgba(44, 152, 240, 0.15) 100%
+);
+$portfolio-card4-bg: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.15) 100%);
+$portfolio-card5-bg: linear-gradient(90deg, rgba(51, 51, 51, 1) 0%, rgba(51, 51, 51, 0.15) 100%);
+
+$portfolio-card6-bg: linear-gradient(
+  90deg,
+  rgba(224, 163, 38, 1) 0%,
+  rgba(224, 163, 38, 0.15) 100%
+);
+
+$portfolio-tech1-bg: rgba(245, 134, 115, 0.51);
+$portfolio-tech2-bg: #5f4981;
+$portfolio-tech3-bg: #5ea3e7;
+$portfolio-tech4-bg: #3a3a3a;
+$portfolio-tech5-bg: #212121;
+$portfolio-tech6-bg: #d88843;
+
+$breakpoints: (
+  smartphone-verysmall: '(min-width: 200px)',
+  smartphone-small: '(min-width: 360px)',
+  smartphone: '(min-width: 460px)',
+  smartphone-large: '(min-width: 640px)',
+  tablet: '(min-width: 800px)',
+  tablet-large: '(min-width: 1024px)',
+  desktop-small: '(min-width: 1280px)',
+  desktop-medium: '(min-width: 1600px)',
+  desktop-large: '(min-width: 1900px)',
+);

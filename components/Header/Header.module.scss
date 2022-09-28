@@ -1,0 +1,63 @@
+@use '../../styles/variables';
+@use '../../styles/mixins';
+
+.header {
+  height: 8rem;
+  width: 100%;
+  position: absolute;
+  // z-index: 2;
+  // top: 0;
+  // left: 0;
+  @include mixins.mq(tablet) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &_onscroll {
+    @include mixins.mq(tablet) {
+      background: variables.$main-bg-color;
+      box-shadow: 1px 1px 10px #000;
+      width: 60rem;
+      left: 50%;
+      border-radius: 0 0 40% 40%;
+      padding: 0 1rem;
+      transform: translateX(-50%);
+    }
+  }
+
+  .hamburger {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9999;
+    @include mixins.mq(smartphone-verysmall) {
+      display: block;
+    }
+    @include mixins.mq(tablet) {
+      display: none;
+    }
+
+    &_bar1,
+    &_bar2,
+    &_bar3 {
+      width: 3.5rem;
+      height: 0.4rem;
+      background: #fff;
+      margin: 0.7rem 0;
+      transition: 0.4s;
+      border-radius: 0.6rem;
+    }
+
+    &_bar1_opened {
+      transform: rotate(-45deg) translate(-7px, 7px);
+    }
+
+    &_bar3_opened {
+      transform: rotate(45deg) translate(-8px, -8px);
+    }
+  }
+}
