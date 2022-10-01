@@ -1,0 +1,84 @@
+@use '../../styles/variables';
+@use '../../styles/mixins';
+
+.skills {
+  @include mixins.sections-padding;
+  @include mixins.wrap {
+    margin: 0 auto;
+  }
+
+  &_container {
+    padding: 4rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &_lottie {
+    overflow: hidden;
+
+    display: none;
+    width: 60rem;
+    border-radius: 500px;
+    @include mixins.mq(tablet) {
+      display: block;
+    }
+  }
+
+  &_description {
+    color: #fff;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    max-width: 2rem 0;
+  }
+
+  &_text {
+    padding-left: 1rem;
+  }
+
+  &_planet {
+    color: variables.$main-purple-color;
+    font-size: 2rem;
+  }
+
+  &_icons_list {
+    margin: 2rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &_icon_item {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
+    @include mixins.mq(tablet) {
+      margin: 3rem;
+    }
+
+    p {
+      margin-top: 1rem;
+      color: #fff;
+      font-size: 1.6rem;
+      font-weight: bold;
+    }
+  }
+
+  &_icon {
+    color: variables.$main-purple-color;
+    width: 5rem;
+    height: 5rem;
+    @include mixins.mq(tablet) {
+      width: 8rem;
+      height: 8rem;
+    }
+  }
+
+  &_techs,
+  &_design {
+    padding-bottom: 4rem;
+  }
+}
