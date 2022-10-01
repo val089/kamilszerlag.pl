@@ -1,0 +1,20 @@
+@use '../../styles/variables';
+
+.section_header {
+  padding: 4rem 0;
+
+  &_title {
+    color: #fff;
+    font-size: 3.3rem;
+    font-weight: bold;
+    padding-bottom: 0.5rem;
+    letter-spacing: 1px;
+  }
+
+  &_line {
+    width: 100%;
+    background: variables.$main-purple-color;
+    border: 2px solid variables.$main-purple-color;
+    border-radius: 2px;
+  }
+}
