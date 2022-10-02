@@ -51,4 +51,17 @@
       font-size: 1.6rem;
     }
   }
+
+  &_social_link {
+    margin-right: 2rem;
+  }
+
+  &_icon {
+    @include mixins.icon;
+    transition: 0.4s;
+
+    &:hover {
+      color: #e45fe4;
+    }
+  }
 }

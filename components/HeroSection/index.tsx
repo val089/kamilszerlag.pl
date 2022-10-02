@@ -1,6 +1,6 @@
 import { GithubIcon } from '../../assets/icons/GithubIcon';
 import { LinkedinIcon } from '../../assets/icons/LinkedinIcon';
-import classes from './heroSection.module.scss';
+import classes from './HeroSection.module.scss';
 import Image from 'next/image';
 import MyImg from '../../assets/images/me.png';
 
