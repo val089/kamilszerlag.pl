@@ -9,7 +9,7 @@ export default function Document() {
           rel="stylesheet"
         />
       </Head>
-      <body>
+      <body id="home-section">
         <Main />
         <NextScript />
       </body>

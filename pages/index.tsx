@@ -7,6 +7,7 @@ import { SkillsSection } from '../components/SkillsSection';
 import { gql } from '@apollo/client';
 import { apolloClient } from '../graphql/apolloClient';
 import { GetPortfolioResponse } from '../types';
+import { Footer } from '../components/Footer';
 
 const getMyPortfolio = gql`
   query GetMyPortfolio {
@@ -37,7 +38,7 @@ const Home = ({ data }: InferGetStaticPropsType<typeof getStaticProps>) => {
       <HeroSection />
       <SkillsSection />
       {data?.portfolio?.length > 0 && <PortfolioSection portfolio={data.portfolio} />}
-      <div style={{ height: 1000 }} />
+      <Footer />
     </Layout>
   );
 };
