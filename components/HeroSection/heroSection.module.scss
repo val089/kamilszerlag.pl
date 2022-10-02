@@ -1,0 +1,137 @@
+@use '../../styles/variables';
+@use '../../styles/mixins';
+
+.hero {
+  background: linear-gradient(
+      0deg,
+      #040641 12.36%,
+      rgba(4, 6, 65, 0.9) 57.13%,
+      rgba(4, 6, 65, 0.7) 100%
+    ),
+    url('../../assets/images/hero-bg.jpg') no-repeat center;
+  @include mixins.mq(smartphone-large) {
+    background: linear-gradient(284.54deg, #040641 57.9%, rgba(4, 6, 65, 0) 114.05%),
+      url('../../assets/images/hero-bg.jpg') no-repeat center;
+  }
+  background-size: cover;
+  width: 100%;
+  padding: 7rem 2rem 0;
+  @include mixins.mq(smartphone-large) {
+    height: 100vh;
+    padding: 1rem 2rem;
+  }
+
+  &_wrap {
+    @include mixins.mq(smartphone-large) {
+      margin: 0 auto;
+      @include mixins.wrap {
+        height: 100vh;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+    }
+    @include mixins.mq(tablet-large) {
+      @include mixins.wrap {
+        justify-content: space-between;
+      }
+    }
+  }
+
+  &_photo_container {
+    display: none;
+    @include mixins.mq(tablet-large) {
+      display: block;
+      flex-basis: 30%;
+    }
+    @include mixins.mq(desktop-small) {
+      flex-basis: 35%;
+    }
+  }
+
+  &_photo {
+    margin-left: 2rem;
+  }
+
+  &_about_me {
+    flex-basis: 100%;
+    padding: 2rem 0 4rem;
+    @include mixins.mq(tablet-large) {
+      flex-basis: 50%;
+    }
+  }
+
+  &_greetings,
+  &_main_title,
+  &_second_title {
+    color: #fff;
+  }
+
+  &_greetings,
+  &_second_title {
+    font-size: 1.6rem;
+  }
+
+  &_greetings {
+    @include mixins.mq(smartphone-large) {
+      font-size: 3rem;
+    }
+  }
+
+  &_second_title {
+    @include mixins.mq(smartphone-large) {
+      font-size: 2.4rem;
+    }
+  }
+
+  &_main_title {
+    color: #fff;
+    padding: 0 0 1rem 0;
+    font-weight: bold;
+    font-size: 2.4rem;
+    @include mixins.mq(smartphone-large) {
+      font-size: 5.3rem;
+    }
+  }
+
+  &_description {
+    display: none;
+    @include mixins.mq(smartphone-large) {
+      padding: 5rem 0;
+      display: block;
+      color: #fff;
+      font-size: 2rem;
+    }
+  }
+
+  &_btn {
+    @include mixins.button {
+      display: none;
+    }
+    @include mixins.mq(smartphone-large) {
+      display: block;
+      font-size: 2.4rem;
+    }
+  }
+
+  &_social {
+    padding-top: 6rem;
+    display: none;
+    @include mixins.mq(smartphone-large) {
+      display: block;
+    }
+  }
+
+  &_social_link {
+    margin-right: 2rem;
+  }
+
+  &_icon {
+    @include mixins.icon;
+    transition: 0.4s;
+
+    &:hover {
+      color: #e45fe4;
+    }
+  }
+}

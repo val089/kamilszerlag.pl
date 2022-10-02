@@ -1,0 +1,54 @@
+@use '../../styles/variables';
+@use '../../styles/mixins';
+
+.footer {
+  height: 20rem;
+  background: #050747;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 4rem;
+  margin-top: 6rem;
+  flex-direction: column;
+
+  @include mixins.mq(tablet-large) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &_menu {
+    display: none;
+    @include mixins.mq(tablet-large) {
+      display: block;
+    }
+  }
+
+  &_item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &_column {
+      flex-direction: column;
+    }
+
+    &_social {
+      display: none;
+      @include mixins.mq(tablet-large) {
+        display: block;
+      }
+    }
+  }
+
+  &_cpryt {
+    color: #fff;
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  &_download_btn {
+    @include mixins.button {
+      font-size: 1.6rem;
+    }
+  }
+}
