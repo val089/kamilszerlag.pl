@@ -2,9 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  // images: {
-  //   formats: ['image/avif', 'image/webp', 'image/png'],
-  // },
+  trailingSlash: true,
+  images: {
+    domains: ['media.graphassets.com'],
+    // formats: ['image/avif', 'image/webp', 'image/png'],
+  },
 };
 
 module.exports = nextConfig;
