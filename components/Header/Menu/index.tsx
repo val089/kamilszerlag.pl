@@ -16,10 +16,10 @@ export const linksData = [
     label: 'Portfolio',
     to: '#portfolio-section',
   },
-  {
-    label: 'Contact',
-    to: '#contact-section',
-  },
+  // {
+  //   label: 'Contact',
+  //   to: '#contact-section',
+  // },
 ];
 
 type MenuProps = {

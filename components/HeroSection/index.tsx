@@ -29,11 +29,11 @@ export const HeroSection = () => {
             Have some project idea and in need of a developer? Would like to do a collab or have a
             job offer? Do not hesitate to contact me.
           </p>
-          <div className={classes.hero_btn_container} style={{ display: 'flex' }}>
+          {/* <div className={classes.hero_btn_container} style={{ display: 'flex' }}>
             <a className={classes.hero_btn} href="#contact-section">
               Contact me
             </a>
-          </div>
+          </div> */}
           <div className={classes.hero_social}>
             <a
               className={classes.hero_social_link}
