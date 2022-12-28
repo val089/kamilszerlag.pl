@@ -17,6 +17,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Technologies
 
 - [Next.js](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
 - [Vercel](https://vercel.com/)
 - [GraphQL](https://graphql.org/)
 - [Apollo Client](https://www.apollographql.com/)
