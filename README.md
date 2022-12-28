@@ -20,7 +20,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - [Vercel](https://vercel.com/)
 - [GraphQL](https://graphql.org/)
 - [Apollo Client](https://www.apollographql.com/)
-- [Hygraph](https://hygraph.com/
+- [Hygraph](https://hygraph.com/)
 
 ## Installation
 1. Clone this repo.
