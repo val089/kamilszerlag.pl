@@ -1,5 +1,4 @@
 import { HeroSection } from '../components/HeroSection';
-// import styles from '../styles/Home.module.scss';
 import { InferGetStaticPropsType } from 'next';
 import { Layout } from '../components/Layout';
 import { PortfolioSection } from '../components/PortfolioSection';

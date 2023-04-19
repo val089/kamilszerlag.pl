@@ -37,7 +37,9 @@ export const Footer = () => {
             </li> */}
           </ul>
         </nav>
-        <p className={classes.footer_cpryt}>&copy; 2021 Kamil Szerląg. All rights reserved</p>
+        <p className={classes.footer_cpryt}>
+          &copy; {new Date().getFullYear()} Kamil Szerląg. All rights reserved
+        </p>
       </div>
 
       <div className={`${classes.footer_item} ${classes.footer_item_social}`}>

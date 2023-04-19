@@ -12,8 +12,12 @@ export const PortfolioSection = ({ portfolio }: PortfolioSectionProps) => {
     <section className={`${classes.portfolio} ${classes.section}`} id="portfolio-section">
       <Title title="Portfolio" />
 
-      {portfolio.map((el) => (
-        <div key={el.id} className={classes.portfolio_card} id="shop">
+      {portfolio.map((el, index) => (
+        <div
+          key={el.id}
+          className={`${classes.portfolio_card} ${classes.portfolio_card_card1_bg}`}
+          id="shop"
+        >
           <div className={classes.portfolio_info_container}>
             <h2 className={classes.portfolio_title}>{el.title}</h2>
             <p className={classes.portfolio_description}>{el.description}</p>

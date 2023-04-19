@@ -1,4 +1,4 @@
-import { GithubIcon } from '../../assets/icons/GithubIcon';
+import { GithubIcon } from '@app/assets/icons/GithubIcon';
 import { LinkedinIcon } from '../../assets/icons/LinkedinIcon';
 import classes from './heroSection.module.scss';
 import Image from 'next/image';
