@@ -1,0 +1,53 @@
+query GetMyPortfolio {
+  portfolio {
+    createdAt
+    githubUrl
+    liveUrl
+    description
+    id
+    publishedAt
+    slug
+    technologies
+    title
+    updatedAt
+    images {
+      url
+      id
+      height
+      width
+    }
+    cardImage {
+      id
+      url
+      width
+      height
+    }
+  }
+}
+
+query GetPortfolioSlug {
+  portfolio {
+    slug
+  }
+}
+
+query GetProjectBySlug($slug: String!) {
+  project(where: { slug: $slug }) {
+    id
+    slug
+    liveUrl
+    technologies
+    title
+    updatedAt
+    publishedAt
+    githubUrl
+    description
+    createdAt
+    images {
+      height
+      id
+      width
+      url
+    }
+  }
+}

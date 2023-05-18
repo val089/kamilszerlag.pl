@@ -14,17 +14,6 @@
     align-items: center;
   }
 
-  &_lottie {
-    overflow: hidden;
-
-    display: none;
-    width: 60rem;
-    border-radius: 500px;
-    @include mixins.mq(tablet) {
-      display: block;
-    }
-  }
-
   &_description {
     color: #fff;
     font-size: 1.4rem;

@@ -1,22 +1,23 @@
 export type ImageItemType = {
   id: string;
   url: string;
-  width: string;
-  height: string;
+  width?: number | null;
+  height?: number | null;
 };
 
 export type PortfolioItemType = {
-  githubUrl: string;
-  liveUrl: string;
   createdAt: string;
+  githubUrl: string;
   description: string;
   id: string;
-  images: ImageItemType[];
-  publishedAt: string;
-  slug: null;
+  slug: string;
   technologies: string[];
   title: string;
   updatedAt: string;
+  images: ImageItemType;
+  cardImage: ImageItemType;
+  publishedAt?: string | null;
+  liveUrl?: string | null;
 };
 
 export type GetPortfolioResponse = {

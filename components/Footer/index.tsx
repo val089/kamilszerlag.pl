@@ -20,11 +20,11 @@ export const Footer = () => {
                 Home
               </a>
             </li>
-            <li className={menuClasses.menu_item}>
+            {/* <li className={menuClasses.menu_item}>
               <a className={`${menuClasses.menu_link} skills-section`} href="#skills-section">
                 Skills
               </a>
-            </li>
+            </li> */}
             <li className={menuClasses.menu_item}>
               <a className={`${menuClasses.menu_link} portfolio-section`} href="#portfolio-section">
                 Portfolio

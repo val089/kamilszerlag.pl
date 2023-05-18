@@ -56,6 +56,6 @@
 }
 
 @mixin wrap {
-  max-width: 150rem;
+  max-width: 120rem;
   @content;
 }

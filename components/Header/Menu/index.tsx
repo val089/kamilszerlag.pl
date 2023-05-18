@@ -8,10 +8,10 @@ export const linksData = [
     label: 'Home',
     to: '#home-section',
   },
-  {
-    label: 'Skills',
-    to: '#skills-section',
-  },
+  // {
+  //   label: 'Skills',
+  //   to: '#skills-section',
+  // },
   {
     label: 'Portfolio',
     to: '#portfolio-section',
