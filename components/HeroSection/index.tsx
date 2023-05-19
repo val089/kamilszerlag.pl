@@ -1,7 +1,7 @@
 import Lottie from 'lottie-react';
 import { GithubIcon } from '@app/assets/icons/GithubIcon';
 import { LinkedinIcon } from '../../assets/icons/LinkedinIcon';
-import classes from './heroSection.module.scss';
+import classes from './HeroSection.module.scss';
 import laptopLottie from './laptopLottie.json';
 // import Image from 'next/image';
 // import MyImg from '../../assets/images/me.png';
