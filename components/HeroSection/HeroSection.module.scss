@@ -2,17 +2,6 @@
 @use '../../styles/mixins';
 
 .hero {
-  background: linear-gradient(
-      0deg,
-      #040641 12.36%,
-      rgba(4, 6, 65, 0.9) 57.13%,
-      rgba(4, 6, 65, 0.7) 100%
-    ),
-    url('../../assets/images/hero-bg.jpg') no-repeat center;
-  @include mixins.mq(smartphone-large) {
-    background: linear-gradient(284.54deg, #040641 57.9%, rgba(4, 6, 65, 0) 114.05%),
-      url('../../assets/images/hero-bg.jpg') no-repeat center;
-  }
   background-size: cover;
   width: 100%;
   padding: 7rem 2rem 0;
@@ -45,7 +34,7 @@
       flex-basis: 30%;
     }
     @include mixins.mq(desktop-small) {
-      flex-basis: 35%;
+      flex-basis: 45%;
     }
   }
 

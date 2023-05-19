@@ -1,22 +1,15 @@
-import { GithubIcon } from '../../assets/icons/GithubIcon';
+import Lottie from 'lottie-react';
+import { GithubIcon } from '@app/assets/icons/GithubIcon';
 import { LinkedinIcon } from '../../assets/icons/LinkedinIcon';
 import classes from './HeroSection.module.scss';
-import Image from 'next/image';
-import MyImg from '../../assets/images/me.png';
+import laptopLottie from './laptopLottie.json';
+// import Image from 'next/image';
+// import MyImg from '../../assets/images/me.png';
 
 export const HeroSection = () => {
   return (
     <section className={classes.hero}>
       <div className={classes.hero_wrap}>
-        <div className={classes.hero_photo_container}>
-          <Image
-            src={MyImg}
-            alt="Kamil Szerląg photo"
-            //  layout="fill"
-            //  objectFit="cover"
-          />
-        </div>
-
         <div className={classes.hero_about_me}>
           <h3 className={classes.hero_greetings}>{`Hi, I'm Kamil`}</h3>
           <h1 className={classes.hero_main_title}>
@@ -52,6 +45,10 @@ export const HeroSection = () => {
               <LinkedinIcon className={classes.hero_icon} />
             </a>
           </div>
+        </div>
+
+        <div className={classes.hero_photo_container}>
+          <Lottie animationData={laptopLottie} loop={true} autoplay={true} />;
         </div>
       </div>
     </section>

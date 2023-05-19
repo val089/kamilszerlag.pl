@@ -79,9 +79,9 @@ export const SkillsSection = () => {
           {/* <div className={classes.skills_icons_list}>icons</div> */}
           {/* </section> */}
         </div>
-        <div className={classes.skills_lottie}>
+        {/* <div className={classes.skills_lottie}>
           <Lottie animationData={astronaut} loop={true} autoplay={true} />;
-        </div>
+        </div> */}
       </div>
     </section>
   );

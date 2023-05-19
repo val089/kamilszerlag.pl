@@ -24,6 +24,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - [Hygraph](https://hygraph.com/)
 
 ## Installation
+
 1. Clone this repo.
 2. `yarn or npm`
 

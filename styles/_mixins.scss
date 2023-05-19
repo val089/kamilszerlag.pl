@@ -18,7 +18,8 @@
 }
 
 @mixin sections-padding {
-  padding: 2rem;
+  // padding: 2rem;
+  padding: 0;
 }
 
 @mixin button {
@@ -56,6 +57,6 @@
 }
 
 @mixin wrap {
-  max-width: 150rem;
+  max-width: 120rem;
   @content;
 }
