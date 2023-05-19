@@ -4,7 +4,7 @@ const nextConfig = {
   swcMinify: true,
   trailingSlash: true,
   images: {
-    domains: ['media.graphassets.com'],
+    domains: ['media.graphassets.com', 'picsum.photos'],
     // formats: ['image/avif', 'image/webp', 'image/png'],
   },
 };

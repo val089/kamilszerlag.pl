@@ -12,7 +12,9 @@
     "check-lint": "eslint . --ext ts --ext tsx --ext js",
     "format": "prettier --write .",
     "test-all": "yarn check-format && yarn check-lint && yarn check-types",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "generated-graphql": "graphql-codegen --config codegen.yml",
+    "codegen": "graphql-codegen --config codegen.ts"
   },
   "dependencies": {
     "@apollo/client": "^3.7.0",
@@ -26,6 +28,7 @@
     "sass": "^1.55.0"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "3.3.1",
     "@types/node": "18.7.18",
     "@types/react": "18.0.20",
     "@types/react-dom": "18.0.6",
@@ -39,7 +42,9 @@
     "husky": "^7.0.0",
     "lint-staged": "12.4.1",
     "prettier": "^2.7.1",
-    "typescript": "4.8.3"
+    "typescript": "4.8.3",
+    "@graphql-codegen/introspection": "3.0.1",
+    "@graphql-codegen/client-preset": "3.0.1"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --fix",

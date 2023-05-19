@@ -2,7 +2,7 @@ import { GithubIcon } from '../../assets/icons/GithubIcon';
 import { LinkedinIcon } from '../../assets/icons/LinkedinIcon';
 import classes from './Footer.module.scss';
 import menuClasses from '../Header/Menu/Menu.module.scss';
-import heroClasses from '../HeroSection/HeroSection.module.scss';
+import heroClasses from '../HeroSection/heroSection.module.scss';
 
 export const Footer = () => {
   return (
@@ -20,11 +20,11 @@ export const Footer = () => {
                 Home
               </a>
             </li>
-            <li className={menuClasses.menu_item}>
+            {/* <li className={menuClasses.menu_item}>
               <a className={`${menuClasses.menu_link} skills-section`} href="#skills-section">
                 Skills
               </a>
-            </li>
+            </li> */}
             <li className={menuClasses.menu_item}>
               <a className={`${menuClasses.menu_link} portfolio-section`} href="#portfolio-section">
                 Portfolio
@@ -37,7 +37,9 @@ export const Footer = () => {
             </li> */}
           </ul>
         </nav>
-        <p className={classes.footer_cpryt}>&copy; 2021 Kamil Szerląg. All rights reserved</p>
+        <p className={classes.footer_cpryt}>
+          &copy; {new Date().getFullYear()} Kamil Szerląg. All rights reserved
+        </p>
       </div>
 
       <div className={`${classes.footer_item} ${classes.footer_item_social}`}>
