@@ -69,8 +69,6 @@ const Project = ({ project }: InferGetStaticPropsType<typeof getStaticProps>) =>
     return <div>Something went wrong...</div>;
   }
 
-  console.log(project);
-
   return (
     <section>
       <div className={classes.innerContainer}>
@@ -84,6 +82,14 @@ const Project = ({ project }: InferGetStaticPropsType<typeof getStaticProps>) =>
         <div className={classes.contentContainer}>
           <div>
             <h3 className={classes.title}>{project.title}</h3>
+            {project.liveUrl && (
+              <div className={classes.links}>
+                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer nofollow">
+                  LIVE PREVIEW
+                </a>
+                {/* <a>GITHUB</a> */}
+              </div>
+            )}
             <p className={classes.technologiesTitle}>Technologies:</p>
             <div className={classes.technologiesList}>
               {!!project.technologies.length &&
@@ -93,6 +99,7 @@ const Project = ({ project }: InferGetStaticPropsType<typeof getStaticProps>) =>
                   </p>
                 ))}
             </div>
+            <p className={classes.descriptionTitle}>Description:</p>
             <p className={classes.description}>{project.description}</p>
           </div>
           <div className={classes.imageContainer}>
