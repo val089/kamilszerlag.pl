@@ -14,10 +14,10 @@ export type PortfolioItemType = {
   technologies: string[];
   title: string;
   updatedAt: string;
-  images: ImageItemType;
   cardImage: ImageItemType;
   publishedAt?: string | null;
   liveUrl?: string | null;
+  projectImage?: ImageItemType;
 };
 
 export type GetPortfolioResponse = {

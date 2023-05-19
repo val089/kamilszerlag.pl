@@ -52,13 +52,13 @@ export type Asset = Node & {
   history: Array<Version>;
   /** The unique identifier */
   id: Scalars['ID'];
-  imagesProject: Array<Project>;
   /** System Locale field */
   locale: Locale;
   /** Get the other localizations for this document */
   localizations: Array<Asset>;
   /** The mime type of the file */
   mimeType?: Maybe<Scalars['String']>;
+  projectImageProject: Array<Project>;
   /** The time the document was published. Null on documents in draft stage. */
   publishedAt?: Maybe<Scalars['DateTime']>;
   /** User that last published this document */
@@ -117,7 +117,13 @@ export type AssetHistoryArgs = {
 };
 
 /** Asset system model */
-export type AssetImagesProjectArgs = {
+export type AssetLocalizationsArgs = {
+  includeCurrent?: Scalars['Boolean'];
+  locales?: Array<Locale>;
+};
+
+/** Asset system model */
+export type AssetProjectImageProjectArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Int']>;
@@ -127,12 +133,6 @@ export type AssetImagesProjectArgs = {
   orderBy?: InputMaybe<ProjectOrderByInput>;
   skip?: InputMaybe<Scalars['Int']>;
   where?: InputMaybe<ProjectWhereInput>;
-};
-
-/** Asset system model */
-export type AssetLocalizationsArgs = {
-  includeCurrent?: Scalars['Boolean'];
-  locales?: Array<Locale>;
 };
 
 /** Asset system model */
@@ -197,10 +197,10 @@ export type AssetCreateInput = {
   fileName: Scalars['String'];
   handle: Scalars['String'];
   height?: InputMaybe<Scalars['Float']>;
-  imagesProject?: InputMaybe<ProjectCreateManyInlineInput>;
   /** Inline mutations for managing document localizations excluding the default locale */
   localizations?: InputMaybe<AssetCreateLocalizationsInput>;
   mimeType?: InputMaybe<Scalars['String']>;
+  projectImageProject?: InputMaybe<ProjectCreateManyInlineInput>;
   size?: InputMaybe<Scalars['Float']>;
   updatedAt?: InputMaybe<Scalars['DateTime']>;
   width?: InputMaybe<Scalars['Float']>;
@@ -302,9 +302,9 @@ export type AssetManyWhereInput = {
   id_not_starts_with?: InputMaybe<Scalars['ID']>;
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']>;
-  imagesProject_every?: InputMaybe<ProjectWhereInput>;
-  imagesProject_none?: InputMaybe<ProjectWhereInput>;
-  imagesProject_some?: InputMaybe<ProjectWhereInput>;
+  projectImageProject_every?: InputMaybe<ProjectWhereInput>;
+  projectImageProject_none?: InputMaybe<ProjectWhereInput>;
+  projectImageProject_some?: InputMaybe<ProjectWhereInput>;
   publishedAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
   publishedAt_gt?: InputMaybe<Scalars['DateTime']>;
@@ -378,10 +378,10 @@ export type AssetUpdateInput = {
   fileName?: InputMaybe<Scalars['String']>;
   handle?: InputMaybe<Scalars['String']>;
   height?: InputMaybe<Scalars['Float']>;
-  imagesProject?: InputMaybe<ProjectUpdateManyInlineInput>;
   /** Manage document localizations */
   localizations?: InputMaybe<AssetUpdateLocalizationsInput>;
   mimeType?: InputMaybe<Scalars['String']>;
+  projectImageProject?: InputMaybe<ProjectUpdateManyInlineInput>;
   size?: InputMaybe<Scalars['Float']>;
   width?: InputMaybe<Scalars['Float']>;
 };
@@ -614,9 +614,6 @@ export type AssetWhereInput = {
   id_not_starts_with?: InputMaybe<Scalars['ID']>;
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']>;
-  imagesProject_every?: InputMaybe<ProjectWhereInput>;
-  imagesProject_none?: InputMaybe<ProjectWhereInput>;
-  imagesProject_some?: InputMaybe<ProjectWhereInput>;
   mimeType?: InputMaybe<Scalars['String']>;
   /** All values containing the given string. */
   mimeType_contains?: InputMaybe<Scalars['String']>;
@@ -636,6 +633,9 @@ export type AssetWhereInput = {
   mimeType_not_starts_with?: InputMaybe<Scalars['String']>;
   /** All values starting with the given string. */
   mimeType_starts_with?: InputMaybe<Scalars['String']>;
+  projectImageProject_every?: InputMaybe<ProjectWhereInput>;
+  projectImageProject_none?: InputMaybe<ProjectWhereInput>;
+  projectImageProject_some?: InputMaybe<ProjectWhereInput>;
   publishedAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
   publishedAt_gt?: InputMaybe<Scalars['DateTime']>;
@@ -1251,8 +1251,8 @@ export type Project = Node & {
   history: Array<Version>;
   /** The unique identifier */
   id: Scalars['ID'];
-  images: Array<Asset>;
   liveUrl?: Maybe<Scalars['String']>;
+  projectImage: Asset;
   /** The time the document was published. Null on documents in draft stage. */
   publishedAt?: Maybe<Scalars['DateTime']>;
   /** User that last published this document */
@@ -1296,16 +1296,9 @@ export type ProjectHistoryArgs = {
 };
 
 /** My projects porfolio */
-export type ProjectImagesArgs = {
-  after?: InputMaybe<Scalars['String']>;
-  before?: InputMaybe<Scalars['String']>;
-  first?: InputMaybe<Scalars['Int']>;
+export type ProjectProjectImageArgs = {
   forceParentLocale?: InputMaybe<Scalars['Boolean']>;
-  last?: InputMaybe<Scalars['Int']>;
   locales?: InputMaybe<Array<Locale>>;
-  orderBy?: InputMaybe<AssetOrderByInput>;
-  skip?: InputMaybe<Scalars['Int']>;
-  where?: InputMaybe<AssetWhereInput>;
 };
 
 /** My projects porfolio */
@@ -1354,8 +1347,8 @@ export type ProjectCreateInput = {
   createdAt?: InputMaybe<Scalars['DateTime']>;
   description: Scalars['String'];
   githubUrl: Scalars['String'];
-  images?: InputMaybe<AssetCreateManyInlineInput>;
   liveUrl?: InputMaybe<Scalars['String']>;
+  projectImage: AssetCreateOneInlineInput;
   slug: Scalars['String'];
   technologies: Array<Scalars['String']>;
   title: Scalars['String'];
@@ -1472,9 +1465,6 @@ export type ProjectManyWhereInput = {
   id_not_starts_with?: InputMaybe<Scalars['ID']>;
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']>;
-  images_every?: InputMaybe<AssetWhereInput>;
-  images_none?: InputMaybe<AssetWhereInput>;
-  images_some?: InputMaybe<AssetWhereInput>;
   liveUrl?: InputMaybe<Scalars['String']>;
   /** All values containing the given string. */
   liveUrl_contains?: InputMaybe<Scalars['String']>;
@@ -1494,6 +1484,7 @@ export type ProjectManyWhereInput = {
   liveUrl_not_starts_with?: InputMaybe<Scalars['String']>;
   /** All values starting with the given string. */
   liveUrl_starts_with?: InputMaybe<Scalars['String']>;
+  projectImage?: InputMaybe<AssetWhereInput>;
   publishedAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
   publishedAt_gt?: InputMaybe<Scalars['DateTime']>;
@@ -1606,8 +1597,8 @@ export type ProjectUpdateInput = {
   cardImage?: InputMaybe<AssetUpdateOneInlineInput>;
   description?: InputMaybe<Scalars['String']>;
   githubUrl?: InputMaybe<Scalars['String']>;
-  images?: InputMaybe<AssetUpdateManyInlineInput>;
   liveUrl?: InputMaybe<Scalars['String']>;
+  projectImage?: InputMaybe<AssetUpdateOneInlineInput>;
   slug?: InputMaybe<Scalars['String']>;
   technologies?: InputMaybe<Array<Scalars['String']>>;
   title?: InputMaybe<Scalars['String']>;
@@ -1774,9 +1765,6 @@ export type ProjectWhereInput = {
   id_not_starts_with?: InputMaybe<Scalars['ID']>;
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']>;
-  images_every?: InputMaybe<AssetWhereInput>;
-  images_none?: InputMaybe<AssetWhereInput>;
-  images_some?: InputMaybe<AssetWhereInput>;
   liveUrl?: InputMaybe<Scalars['String']>;
   /** All values containing the given string. */
   liveUrl_contains?: InputMaybe<Scalars['String']>;
@@ -1796,6 +1784,7 @@ export type ProjectWhereInput = {
   liveUrl_not_starts_with?: InputMaybe<Scalars['String']>;
   /** All values starting with the given string. */
   liveUrl_starts_with?: InputMaybe<Scalars['String']>;
+  projectImage?: InputMaybe<AssetWhereInput>;
   publishedAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
   publishedAt_gt?: InputMaybe<Scalars['DateTime']>;
@@ -3673,13 +3662,6 @@ export type GetMyPortfolioQuery = {
     technologies: Array<string>;
     title: string;
     updatedAt: any;
-    images: Array<{
-      __typename?: 'Asset';
-      url: string;
-      id: string;
-      height?: number | null;
-      width?: number | null;
-    }>;
     cardImage?: {
       __typename?: 'Asset';
       id: string;
@@ -3715,13 +3697,13 @@ export type GetProjectBySlugQuery = {
     githubUrl: string;
     description: string;
     createdAt: any;
-    images: Array<{
+    projectImage: {
       __typename?: 'Asset';
-      height?: number | null;
       id: string;
       width?: number | null;
       url: string;
-    }>;
+      height?: number | null;
+    };
   } | null;
 };
 
@@ -3751,19 +3733,6 @@ export const GetMyPortfolioDocument = {
                 { kind: 'Field', name: { kind: 'Name', value: 'technologies' } },
                 { kind: 'Field', name: { kind: 'Name', value: 'title' } },
                 { kind: 'Field', name: { kind: 'Name', value: 'updatedAt' } },
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: 'images' },
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      { kind: 'Field', name: { kind: 'Name', value: 'url' } },
-                      { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-                      { kind: 'Field', name: { kind: 'Name', value: 'height' } },
-                      { kind: 'Field', name: { kind: 'Name', value: 'width' } },
-                    ],
-                  },
-                },
                 {
                   kind: 'Field',
                   name: { kind: 'Name', value: 'cardImage' },
@@ -3862,14 +3831,14 @@ export const GetProjectBySlugDocument = {
                 { kind: 'Field', name: { kind: 'Name', value: 'createdAt' } },
                 {
                   kind: 'Field',
-                  name: { kind: 'Name', value: 'images' },
+                  name: { kind: 'Name', value: 'projectImage' },
                   selectionSet: {
                     kind: 'SelectionSet',
                     selections: [
-                      { kind: 'Field', name: { kind: 'Name', value: 'height' } },
                       { kind: 'Field', name: { kind: 'Name', value: 'id' } },
                       { kind: 'Field', name: { kind: 'Name', value: 'width' } },
                       { kind: 'Field', name: { kind: 'Name', value: 'url' } },
+                      { kind: 'Field', name: { kind: 'Name', value: 'height' } },
                     ],
                   },
                 },

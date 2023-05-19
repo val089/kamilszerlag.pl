@@ -10,12 +10,6 @@ query GetMyPortfolio {
     technologies
     title
     updatedAt
-    images {
-      url
-      id
-      height
-      width
-    }
     cardImage {
       id
       url
@@ -43,11 +37,11 @@ query GetProjectBySlug($slug: String!) {
     githubUrl
     description
     createdAt
-    images {
-      height
+    projectImage {
       id
       width
       url
+      height
     }
   }
 }

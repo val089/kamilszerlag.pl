@@ -7,6 +7,10 @@ import {
   GetProjectBySlugQuery,
   GetProjectBySlugQueryVariables,
 } from '@app/generated/graphql';
+import Image from 'next/image';
+import Link from 'next/link';
+import classes from './Project.module.scss';
+import { ArrowLeftIcon } from '@app/assets/icons/ArrowLeftIcon';
 
 export type InferGetStaticPaths<T> = T extends () => Promise<{
   paths: Array<{ params: infer R }>;
@@ -62,10 +66,49 @@ export const getStaticProps = async ({ params }: InferGetStaticPaths<typeof getS
 
 const Project = ({ project }: InferGetStaticPropsType<typeof getStaticProps>) => {
   if (!project) {
-    return <div>Coś poszło nie tak...</div>;
+    return <div>Something went wrong...</div>;
   }
 
-  return <h1 style={{ color: '#fff', fontSize: 40 }}>{project.title}</h1>;
+  console.log(project);
+
+  return (
+    <section>
+      <div className={classes.innerContainer}>
+        <Link href="/" passHref legacyBehavior>
+          <a className={classes.backLink}>
+            <ArrowLeftIcon className={classes.backIcon} />
+            <p>Back to home</p>
+          </a>
+        </Link>
+
+        <div className={classes.contentContainer}>
+          <div>
+            <h3 className={classes.title}>{project.title}</h3>
+            <p className={classes.technologiesTitle}>Technologies:</p>
+            <div className={classes.technologiesList}>
+              {!!project.technologies.length &&
+                project.technologies.map((item) => (
+                  <p key={item} className={classes.technologyItem}>
+                    {item}
+                  </p>
+                ))}
+            </div>
+            <p className={classes.description}>{project.description}</p>
+          </div>
+          <div className={classes.imageContainer}>
+            {project.projectImage && (
+              <Image
+                src={project.projectImage.url ?? ''}
+                width={project.projectImage.width ?? 100}
+                height={project.projectImage.height ?? 100}
+                alt="image"
+              />
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Project;
