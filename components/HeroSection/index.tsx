@@ -3,8 +3,6 @@ import { GithubIcon } from '@app/assets/icons/GithubIcon';
 import { LinkedinIcon } from '../../assets/icons/LinkedinIcon';
 import classes from './HeroSection.module.scss';
 import laptopLottie from './laptopLottie.json';
-// import Image from 'next/image';
-// import MyImg from '../../assets/images/me.png';
 
 export const HeroSection = () => {
   return (
