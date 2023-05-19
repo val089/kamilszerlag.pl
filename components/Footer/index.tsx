@@ -2,7 +2,7 @@ import { GithubIcon } from '../../assets/icons/GithubIcon';
 import { LinkedinIcon } from '../../assets/icons/LinkedinIcon';
 import classes from './Footer.module.scss';
 import menuClasses from '../Header/Menu/Menu.module.scss';
-import heroClasses from '../HeroSection/heroSection.module.scss';
+import heroClasses from '../HeroSection/HeroSection.module.scss';
 
 export const Footer = () => {
   return (
@@ -44,20 +44,20 @@ export const Footer = () => {
 
       <div className={`${classes.footer_item} ${classes.footer_item_social}`}>
         <a
-          className={heroClasses.hero_social_link}
+          className={classes.footer_social_link}
           href="https://github.com/val089"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <GithubIcon className={heroClasses.hero_icon} />
+          <GithubIcon className={classes.footer_icon} />
         </a>
         <a
-          className={heroClasses.hero_social_link}
+          className={classes.footer_social_link}
           href="https://www.linkedin.com/in/kamil-szerlag/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <LinkedinIcon className={heroClasses.hero_icon} />
+          <LinkedinIcon className={classes.footer_icon} />
         </a>
       </div>
     </footer>
