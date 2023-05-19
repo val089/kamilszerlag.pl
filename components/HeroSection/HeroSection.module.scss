@@ -28,9 +28,7 @@
   }
 
   &_photo_container {
-    display: none;
     @include mixins.mq(tablet-large) {
-      display: block;
       flex-basis: 30%;
     }
     @include mixins.mq(desktop-small) {
