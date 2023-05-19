@@ -2,7 +2,7 @@ import { GithubIcon } from '../../assets/icons/GithubIcon';
 import { LinkedinIcon } from '../../assets/icons/LinkedinIcon';
 import classes from './Footer.module.scss';
 import menuClasses from '../Header/Menu/Menu.module.scss';
-import heroClasses from '../HeroSection/HeroSection.module.scss';
+import heroClasses from '../HeroSection/heroSection.module.scss';
 
 export const Footer = () => {
   return (
